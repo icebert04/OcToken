@@ -1,17 +1,15 @@
 pragma solidity ^0.5.0;
 
-import "./DaiToken.sol";
 import "./OcToken.sol";
+import "./DaiToken.sol";
 
 contract TokenGenerator {
-    //code...
-    string public name = "OcToken Generator";
+    string public name = "Token Generator";
     OcToken public ocToken;
     DaiToken public daiToken;
 
     constructor(OcToken _ocToken, DaiToken _daiToken) public {
-        OcToken = _ocToken;
-        DaiToken = _daiToken;
+        ocToken = _ocToken;
+        daiToken = _daiToken;
     }
 }
-    

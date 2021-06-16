@@ -2,7 +2,7 @@ const OcToken = artifacts.require('OcToken')
 const DaiToken = artifacts.require('DaiToken')
 const TokenGenerator = artifacts.require("TokenGenerator");
 
-module.exports = function(deployer, network, accounts) {
+module.exports = async function(deployer, network, accounts) {
     await deployer.deploy(DaiToken)
     const daiToken = await DaiToken.deployed()
 
@@ -17,4 +17,5 @@ module.exports = function(deployer, network, accounts) {
 
       // Transfer 100 DAI tokens to investor
     await daiToken.transfer(accounts[1], '100000000000000000000')
+
 };
