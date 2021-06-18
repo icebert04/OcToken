@@ -1,1 +1,81 @@
 /* Styles go here */
+:root {
+  --primary: rgb(165, 85, 185);
+  --primary-dark: rgb(74, 14, 94);
+  --secondary: rgb(3, 232, 252);
+  --secondary-dark: rgb(0, 128, 133);
+}
+/* default */
+
+* {
+  transition: 0.2s;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+li {
+  list-style: none;
+}
+
+/* nav */
+.navbar {
+  background-color: #f6f6f6;
+  padding: 0px 2rem;
+  margin: 0px;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+
+  border-bottom: 5px solid var(--primary);
+}
+
+.navbar-icon {
+  text-align: center;
+}
+
+/* button */
+
+.button {
+  background-color: var(--secondary);
+  color: black;
+}
+
+.button:hover {
+  background-color: var(--secondary-dark);
+  color: white;
+}
+
+/* main */
+
+.token {
+  padding-left: 12px;
+  width: 100%;
+  height: auto;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(1fr, 2fr);
+}
+
+#title {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 2.5rem;
+}
+#title b {
+  color: var(--primary-dark);
+}
+
+#content {
+  margin-top: 7rem;
+}

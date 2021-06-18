@@ -1,26 +1,21 @@
 import React, { Component } from 'react'
-import farmer from '../farmer.png'
+import Octo from '../Octopus.png'
 
 class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a
-          className="navbar-brand col-sm-3 col-md-2 mr-0"
-          href="/"
-        >
-          <img src={Octo} width="30" height="30" className="d-inline-block align-top" alt="" />
-          &nbsp; Octo
+      <nav className="navbar">
+        <a href="/">
+          <div className="navbar-icon d-inline-block align-top">
+                <img src={Octo} width="100" height="95" alt="purple octopus" />
+                <p><b>OcToken</b></p>
+          </div>
         </a>
-
-        <ul className="navbar-nav px-3">
-          <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            <small className="text-secondary">
-              <small id="account">{this.props.account}</small>
+            <small>
+              <p>Address:</p>
+              <span>{this.props.account}</span>
             </small>
-          </li>
-        </ul>
       </nav>
     );
   }

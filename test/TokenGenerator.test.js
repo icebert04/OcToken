@@ -48,6 +48,57 @@ require('chai')
             let balance = await ocToken.balanceOf(tokenGenerator.address)
             assert.equal(balance.toString(), tokens('1000000'))
         })
-
     })
+
+    describe('Generating tokens', async () => {
+        it('rewards investors for sending Dai tokens', async () => {
+            let result
+
+            result = await daiToken.balanceOf(investor)
+            assert.equal(result.toString(), tokens('100'), 'investor DAI wallet balance correct before sending')
+        // Send DAI Tokens
+            await daiToken.approve(tokenGenerator.address, tokens('100'), { from: investor })
+            await tokenGenerator.placeTokens(tokens('100'), { from: investor })
+
+        // Check result
+            result = await daiToken.balanceOf(investor)
+            assert.equal(result.toString(), tokens('0'), 'investor DAI wallet balance correct after sending')
+
+            result = await daiToken.balanceOf(tokenGenerator.address)
+            assert.equal(result.toString(), tokens('100'), 'Token Generator DAI balance correct after sending')
+
+            result = await tokenGenerator.sendingBalance(investor)
+            assert.equal(result.toString(), tokens('100'), 'investor sending balance correct after sending')
+
+            result = await tokenGenerator.isPlacing(investor)
+            assert.equal(result.toString(), 'true', 'investor sending status correct after sending')
+
+            // Reward Tokens
+            await tokenGenerator.awardToken({ from: owner })
+
+            // Check balances after the rewards
+            result = await ocToken.balanceOf(investor)
+            assert.equal(result.toString(), tokens('100'), 'investor Octo Token wallet balance correct after the rewards')
+
+            // Ensure that only onwer can reward tokens
+            await tokenGenerator.awardToken({ from: investor }).should.be.rejected;
+
+            // refund tokens
+            await tokenGenerator.refundTokens({ from: investor })
+
+            // Check results after refunding
+            result = await daiToken.balanceOf(investor)
+            assert.equal(result.toString(), tokens('100'), 'investor DAI wallet balance correct after sending')
+
+            result = await daiToken.balanceOf(tokenGenerator.address)
+            assert.equal(result.toString(), tokens('0'), 'Token Generator DAI balance correct after sending')
+
+            result = await tokenGenerator.sendingBalance(investor)
+            assert.equal(result.toString(), tokens('0'), 'investor balance correct after sending')
+
+            result = await tokenGenerator.isPlacing(investor)
+            assert.equal(result.toString(), 'false', 'investor sending status correct after sending')
+        })
+    })
+
 })
