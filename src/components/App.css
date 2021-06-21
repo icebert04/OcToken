@@ -11,6 +11,13 @@
   transition: 0.2s;
 }
 
+body {
+  background-color: #ececec;
+  background-image: url("./../tentacle-side1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 a {
   text-decoration: none;
   color: var(--primary);
@@ -23,6 +30,11 @@ a:hover {
 
 li {
   list-style: none;
+}
+
+ul {
+  padding: 0pcx;
+  margin: 0px;
 }
 
 /* nav */
@@ -47,11 +59,13 @@ li {
 .button {
   background-color: var(--secondary);
   color: black;
+  border: none;
 }
 
 .button:hover {
   background-color: var(--secondary-dark);
   color: white;
+  border: none;
 }
 
 /* main */
@@ -63,19 +77,52 @@ li {
 }
 
 .main-grid {
+  padding: 0px;
   display: grid;
-  grid-template-columns: repeat(1fr, 2fr);
+  grid-template-columns: repeat(2, 2fr);
 }
 
 #title {
   text-align: center;
   color: var(--primary);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+#title h1 {
+  text-shadow: #ececec 0px 0px 1px;
 }
 #title b {
+  color: var(--primary-dark);
+}
+#title p {
+  font-weight: bold;
   color: var(--primary-dark);
 }
 
 #content {
   margin-top: 7rem;
+}
+
+#refund div.card {
+  background-image: url("./../tentacles.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 20rem;
+}
+/* card */
+
+.card {
+  margin: 10px;
+  padding-top: 2rem;
+  min-height: 13rem;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: none;
+  border-radius: 15px;
 }
