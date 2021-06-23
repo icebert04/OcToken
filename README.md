@@ -1,6 +1,8 @@
 # Introducing OcToken
 > The **"Safest"** Yield Farm ever built in South East Asia
 
+(Image goes here - Localhost)
+
 With the use of
 * Solidity
 * Truffle
@@ -13,7 +15,7 @@ With the help of Ganache, a local in-memory blockchain designed for development 
 
 See image below...
 
-(Image attached here)
+(Image attached here - Ganache)
 
 In a sense, anyone is free to stake their tokens and earn from our Yield Farm without being rug pulled.
 
