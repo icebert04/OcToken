@@ -15,8 +15,7 @@ With the help of Ganache, a local in-memory blockchain designed for development 
 
 See image below...
 
-(Image attached here - Ganache)
-
+![Ganache-Screenshot](/images/Ganache-Screenshot.png)
 In a sense, anyone is free to stake their tokens and earn from our Yield Farm without being rug pulled.
 
 > **Disclaimer**  This repo is only for show purposes and it's not used for productivity. However, anyone can fork this for their own yield farm app purposes.
