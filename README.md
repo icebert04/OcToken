@@ -1,5 +1,5 @@
 # Introducing OcToken
-> The **"Safest"** Yield Farm ever built in South East Asia
+The **"Safest"** Yield Farm ever built in South East Asia
 
 ![OcToken-screenshot](/images/OcToken-screenshot.png)
 
