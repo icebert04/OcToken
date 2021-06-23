@@ -1,7 +1,7 @@
 # Introducing OcToken
 > The **"Safest"** Yield Farm ever built in South East Asia
 
-(Image goes here - Localhost)
+![OcToken-screenshot](/images/OcToken-screenshot.png)
 
 With the use of
 * Solidity
